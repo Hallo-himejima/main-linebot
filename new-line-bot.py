@@ -49,9 +49,9 @@ def handle_message(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=hoge(username)))
+        TextSendMessage(text=c_reply(username)))
 
-def hoge(username):
+def c_reply(username):
     reply=["おはよう","こんにちわ","こんばんわ"]
     return "%sさん、\n%s" % (username,random.choice(reply))
 
