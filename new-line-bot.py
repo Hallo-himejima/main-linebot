@@ -51,8 +51,9 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=c_reply(username)))
     
-    if event=="死ね":
-        return "おめーが死ねよ。殺すぞ"
+    if message=="死ね":
+        print("おめーが死ねよ")
+
 
 def c_reply(username):
     reply=["紗倉まなだよ♡元気出して！","たばこ吸えば？一本と言わず三本くらい","明日ラモ全６らしいよ。朝一フィジカル発揮するべ","一発抜いて落ち着こ。そしたら向こう側の世界へ行けるっしょ",
