@@ -33,15 +33,14 @@ def callback():
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
 
-    if body=="死ね":
-        print("おめーが死ねよ")
 
     # handle webhook body
     try:
         handler.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
-
+    if body =="死ね":
+        return "おめーが死ねよ"
     return 'OK'
 
 
