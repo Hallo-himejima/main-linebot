@@ -33,6 +33,9 @@ def callback():
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
 
+    if body=="死ね":
+        print("おめーが死ねよ")
+
     # handle webhook body
     try:
         handler.handle(body, signature)
@@ -51,10 +54,6 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=c_reply(username)))
     
-    if message=="死ね":
-        print("おめーが死ねよ")
-
-
 def c_reply(username):
     reply=["紗倉まなだよ♡元気出して！","たばこ吸えば？一本と言わず三本くらい","明日ラモ全６らしいよ。朝一フィジカル発揮するべ","一発抜いて落ち着こ。そしたら向こう側の世界へ行けるっしょ",
     "たまにはキャバクラとかどうよ！ハーレム好きっしょ！","そんなときこそ背伸びして高級ソープじゃね？","うんうん、それ何とかなるやつ","これからは特技、存在することでいこう！"
