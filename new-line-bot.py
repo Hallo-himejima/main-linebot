@@ -48,12 +48,18 @@ def handle_message(event):
     profile = line_bot_api.get_profile(event.source.user_id)
     username = profile.display_name
     user_message = event.message.text
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=c_reply(username,user_message)))
+    if user_message == '強欲な壺':
+        image_message = ImageSendMessage(
+            original_content_url='http://salamanderz.com/wp/wp-content/uploads/2015/06/maxresdefault-3-300x300-300x300.jpg',
+            preview_image_url='http://salamanderz.com/wp/wp-content/uploads/2015/06/maxresdefault-3-300x300-300x300.jpg')
+        
+    else:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=c_reply(username,user_message)))        
     
 def c_reply(username,user_message):
-    reply=["紗倉まなだよ♡元気出して！","たばこ吸えば？一本と言わず三本くらい","明日ラモ全６らしいよ。朝一フィジカル発揮するべ","一発抜いて落ち着こ。そしたら向こう側の世界へ行けるっしょ",
+    reply=["紗倉まなだよ♡元気出して！","たばこ吸えば？一本と言わず三本くらい","朝一フィジカル発揮するべ","一発抜いて落ち着こ。そしたら向こう側の世界へ行けるっしょ",
     "たまにはキャバクラとかどうよ！ハーレム好きっしょ！","そんなときこそ背伸びして高級ソープじゃね？","うんうん、それ何とかなるやつ","これからは特技、存在することでいこう！"
     "男なら胸張ってキモがられろし！","今日はパーッと酒浴びに行こ！","はいはい、叙々苑ね？","なんでそんな悲観するの？全部ひとのせいにすればいいじゃん",
     "何が大事って、堕落した生活をいかに正当化するかだよ","がんばっている周りが悪いと思う","幸福って健康と物忘れの早さらしいよ","エクスタシーって知ってる？",
@@ -67,7 +73,7 @@ def c_reply(username,user_message):
     if user_message=="死ね":
         return "おめーが死ねよ"
 
-    else: 
+    else:
         return "%sさん、\n%s" % (username,random.choice(reply))
 
 
