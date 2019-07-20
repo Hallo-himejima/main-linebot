@@ -49,7 +49,7 @@ def handle_message(event):
     username = profile.display_name
     user_message = event.message.text
     if user_message == '強欲な壺':
-        image_message = ImageSendMessage(
+        image_message = line_bot_api.reply_message(event.reply_token,ImageSendMessage(
             original_content_url='http://salamanderz.com/wp/wp-content/uploads/2015/06/maxresdefault-3-300x300-300x300.jpg',
             preview_image_url='http://salamanderz.com/wp/wp-content/uploads/2015/06/maxresdefault-3-300x300-300x300.jpg')
         
