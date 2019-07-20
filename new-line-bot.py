@@ -88,6 +88,9 @@ def c_reply(username,user_message):
     elif user_message=="あ":
         return "あじゃねーよ！殺すぞ！もっとなんか言え"
 
+    elif user_message=="紗倉まな":
+        return "大好き"
+
     else:
         return "%sさん、\n%s" % (username,random.choice(reply))
 
