@@ -12,8 +12,12 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
 )
 import os
+from os.path import join, dirname
+from dotenv import load_dotenv
 
 import random
+
+load_dotenv(join(dirname(__file__), '.env'))
 
 app = Flask(__name__)
 
