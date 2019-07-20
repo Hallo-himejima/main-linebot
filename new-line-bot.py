@@ -49,9 +49,9 @@ def handle_message(event):
     username = profile.display_name
     user_message = event.message.text
 
-    image=[https://files.value-press.com/czMjYXJ0aWNsZSMyMjcwMSMxODk5MTkjMjI3MDFfRFp0aEdRQk1sSy5qcGc.jpg,
-    https://prtimes.jp/i/22436/5/origin/d22436-5-177370-pixta_29876635-1.jpg,
-    https://realsound.jp/wp-content/uploads/2018/02/180222-cr-j-6.jpg
+    image=['https://files.value-press.com/czMjYXJ0aWNsZSMyMjcwMSMxODk5MTkjMjI3MDFfRFp0aEdRQk1sSy5qcGc.jpg',
+    'https://prtimes.jp/i/22436/5/origin/d22436-5-177370-pixta_29876635-1.jpg',
+    'https://realsound.jp/wp-content/uploads/2018/02/180222-cr-j-6.jpg'
     ]
 
     if user_message == '強欲な壺':
@@ -59,11 +59,13 @@ def handle_message(event):
             original_content_url='https://pbs.twimg.com/media/CC9EzMGVAAI-HYT.jpg',
             preview_image_url='https://pbs.twimg.com/media/CC9EzMGVAAI-HYT.jpg'
             ))
+
     elif '疲れた' in user_message:
+        jpg = random.choice(image)
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(
-            original_content_url=random.choice(image),
-            preview_image_url=random.choice(image)
-        ))
+            original_content_url=jpg,
+            preview_image_url=jpg
+            ))
 
     else:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=c_reply(username,user_message)))        
