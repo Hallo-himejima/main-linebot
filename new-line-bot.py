@@ -49,7 +49,7 @@ def handle_message(event):
     username = profile.display_name
     user_message = event.message.text
 
-    image=[https://image.news.livedoor.com/newsimage/7/e/7eefb_1538_900d9e320d7ffc311caffadd222e6183.png,
+    image=[https://files.value-press.com/czMjYXJ0aWNsZSMyMjcwMSMxODk5MTkjMjI3MDFfRFp0aEdRQk1sSy5qcGc.jpg
     https://prtimes.jp/i/22436/5/origin/d22436-5-177370-pixta_29876635-1.jpg,
     https://realsound.jp/wp-content/uploads/2018/02/180222-cr-j-6.jpg
     ]
