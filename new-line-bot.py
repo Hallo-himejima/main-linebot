@@ -9,7 +9,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,ImageSendMessage
+    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
 )
 import os
 
@@ -51,12 +51,11 @@ def handle_message(event):
     if user_message == '強欲な壺':
         image_message = line_bot_api.reply_message(event.reply_token,ImageSendMessage(
             original_content_url='http://salamanderz.com/wp/wp-content/uploads/2015/06/maxresdefault-3-300x300-300x300.jpg',
-            preview_image_url='http://salamanderz.com/wp/wp-content/uploads/2015/06/maxresdefault-3-300x300-300x300.jpg')
-        
+            preview_image_url='http://salamanderz.com/wp/wp-content/uploads/2015/06/maxresdefault-3-300x300-300x300.jpg'
+            )
+    
     else:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=c_reply(username,user_message)))        
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=c_reply(username,user_message)))        
     
 def c_reply(username,user_message):
     reply=["紗倉まなだよ♡元気出して！","たばこ吸えば？一本と言わず三本くらい","朝一フィジカル発揮するべ","一発抜いて落ち着こ。そしたら向こう側の世界へ行けるっしょ",
