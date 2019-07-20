@@ -50,8 +50,8 @@ def handle_message(event):
     user_message = event.message.text
     if user_message == '強欲な壺':
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(
-            original_content_url='http://salamanderz.com/wp/wp-content/uploads/2015/06/maxresdefault-3-300x300-300x300.jpg',
-            preview_image_url='http://salamanderz.com/wp/wp-content/uploads/2015/06/maxresdefault-3-300x300-300x300.jpg'
+            original_content_url='https://popleta.goo.ne.jp/wp-content/uploads/2019/06/59533_main-740x494.jpg',
+            preview_image_url='https://popleta.goo.ne.jp/wp-content/uploads/2019/06/59533_main-740x494.jpg'
             ))
     
     else:
