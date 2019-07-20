@@ -50,9 +50,9 @@ def handle_message(event):
     user_message = event.message.text
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=c_reply(username)))
+        TextSendMessage(text=c_reply(username,user_message)))
     
-def c_reply(username):
+def c_reply(username,user_message):
     reply=["紗倉まなだよ♡元気出して！","たばこ吸えば？一本と言わず三本くらい","明日ラモ全６らしいよ。朝一フィジカル発揮するべ","一発抜いて落ち着こ。そしたら向こう側の世界へ行けるっしょ",
     "たまにはキャバクラとかどうよ！ハーレム好きっしょ！","そんなときこそ背伸びして高級ソープじゃね？","うんうん、それ何とかなるやつ","これからは特技、存在することでいこう！"
     "男なら胸張ってキモがられろし！","今日はパーッと酒浴びに行こ！","はいはい、叙々苑ね？","なんでそんな悲観するの？全部ひとのせいにすればいいじゃん",
@@ -65,7 +65,8 @@ def c_reply(username):
     "むしろ逆だよ。相手の胸が自分の手の平を揉んできた的な発想でいこ","プリキュアに文句があるなら俺が聞くぜ","わかるー！幼女といえば鎖骨とあばら的なね"]
     
     if user_message=="死ね":
-        return print("はっ？おめーが死ねよ"(username))
+        return print("はっ？おめーが死ねよ"(user_message))
+
     else: 
         return print("%sさん、\n%s" % (username,random.choice(reply)))
 
