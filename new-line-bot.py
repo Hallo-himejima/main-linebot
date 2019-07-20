@@ -65,8 +65,9 @@ def c_reply(username):
     "むしろ逆だよ。相手の胸が自分の手の平を揉んできた的な発想でいこ","プリキュアに文句があるなら俺が聞くぜ","わかるー！幼女といえば鎖骨とあばら的なね"]
     
     if user_message=="死ね":
-        return "はっ？おめーが死ねよ"
-    elif: return "%sさん、\n%s" % (username,random.choice(reply))
+        return print("はっ？おめーが死ねよ")
+    else: 
+        return print("%sさん、\n%s" % (username,random.choice(reply)))
 
 
 if __name__ == "__main__":
