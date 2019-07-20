@@ -39,8 +39,7 @@ def callback():
         handler.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
-    if body =="死ね":
-        return "おめーが死ねよ"
+    
     return 'OK'
 
 
@@ -48,7 +47,7 @@ def callback():
 def handle_message(event):
     profile = line_bot_api.get_profile(event.source.user_id)
     username = profile.display_name
-
+    user_message = event.message.text
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=c_reply(username)))
@@ -65,7 +64,9 @@ def c_reply(username):
     "欲望の沼にどっぷりはまれし","やって後悔するほうがいいなんて言っているの、やってしまって後悔の味を知らない無責任な第三者の言葉だから","ドンマイドンマイ。今のは失敗じゃなくておっぱい",
     "むしろ逆だよ。相手の胸が自分の手の平を揉んできた的な発想でいこ","プリキュアに文句があるなら俺が聞くぜ","わかるー！幼女といえば鎖骨とあばら的なね"]
     
-    return "%sさん、\n%s" % (username,random.choice(reply))
+    if user_message=="死ね":
+        return "はっ？おめーが死ねよ"
+    elif: return "%sさん、\n%s" % (username,random.choice(reply))
 
 
 if __name__ == "__main__":
