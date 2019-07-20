@@ -48,12 +48,23 @@ def handle_message(event):
     profile = line_bot_api.get_profile(event.source.user_id)
     username = profile.display_name
     user_message = event.message.text
+
+    image=[https://image.news.livedoor.com/newsimage/7/e/7eefb_1538_900d9e320d7ffc311caffadd222e6183.png,
+    https://prtimes.jp/i/22436/5/origin/d22436-5-177370-pixta_29876635-1.jpg,
+    https://realsound.jp/wp-content/uploads/2018/02/180222-cr-j-6.jpg
+    ]
+
     if user_message == '強欲な壺':
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(
             original_content_url='https://pbs.twimg.com/media/CC9EzMGVAAI-HYT.jpg',
             preview_image_url='https://pbs.twimg.com/media/CC9EzMGVAAI-HYT.jpg'
             ))
-    
+    elif '疲れた' in user_message:
+        line_bot_api.reply_message(event.reply_token,ImageSendMessage(
+            original_content_url=random.choice(image),
+            preview_image_url=random.choice(image)
+        ))
+
     else:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=c_reply(username,user_message)))        
     
