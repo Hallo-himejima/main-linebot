@@ -22,8 +22,8 @@ load_dotenv(join(dirname(__file__), '.env'))
 app = Flask(__name__)
 
 #環境変数取得
-YOUR_CHANNEL_ACCESS_TOKEN = "Okmn/+loVcvxpPO9LauGC8IGAYFdCjRGxlzw0EIa3XTwxJaQh0b/H7rBIQjRDLLD9ie9yn1nuGUgletZRjcyue//Y9tPKb5sBc8icSXcY0Y2b5uJ/DurOd1kSmq4P7xg58Ux8teOYnxlclYbDL4wGwdB04t89/1O/w1cDnyilFU="
-YOUR_CHANNEL_SECRET = "38eb69f2d123b875e8537d35ba63aa39"
+YOUR_CHANNEL_ACCESS_TOKEN = os.environ.get('LINE_TOKEN')
+YOUR_CHANNEL_SECRET = os.environ.get('LINE_SECRET')
 
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
